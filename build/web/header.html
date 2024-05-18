@@ -1,0 +1,27 @@
+<header>
+    <nav class="navbar">
+        <span class="hamburger-btn"><i class="fa fa-bars"></i></span>
+        <a href="index.jsp" class="logo">
+            <img src="images/logo.png" alt="logo">
+            <h2>ARC Laundry</h2>
+        </a>
+        <ul class="links">
+            <span class="close-btn"><i class="fa fa-times"></i></span>
+            <li><a href="index.jsp">Home</a></li>
+            <li><a href="about.jsp">How it works</a></li>
+            <li><a href="areas.jsp">Areas Covered</a></li>
+            <li><a href="terms.jsp">Terms & Conditions</a></li>
+            <%-- Show "My Profile" link only if user is logged in --%>
+            <% if (session.getAttribute("user") != null) { %>
+                <li><a href="Profile.jsp">MY PROFILE</a></li>
+            <% } %>
+        </ul>
+        <%-- Check if user is logged in --%>
+        <% if (session.getAttribute("user") != null) { %>
+            <a href="Logout"><button class="login-btn">LOGOUT</button></a>
+        <% } else { %>
+            <a href="Login.jsp"><button class="login-btn">Login/SignUp</button></a>
+        <% } %>
+    </nav>
+</header>
+

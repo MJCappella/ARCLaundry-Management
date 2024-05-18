@@ -1,0 +1,625 @@
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: url(images/background.png);
+            background-size: cover;
+            background-position: center;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            margin-top: 7rem;
+            margin-bottom: 3rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+        form input{
+            border: 1px solid #717171;
+            border-radius: 4px;
+            display: block;
+            font-size: 15px;
+            padding: 9px;
+            width: 100%;
+        }
+        label, input {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        form .button{
+            border: none;
+            outline: none;
+            background: #07a737;
+            color: #000000;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 10px 18px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: 0.15s ease;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+/* Common css starts here */
+
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+ }
+
+  
+:root {
+ --header-height: 7rem;
+ --first-color: #07a737;
+ --dark-color: #070D1F;
+ --dark-color-alt: #282B3A;
+ --white-color: #E6E7E9;
+ font-family: 'Montserrat', sans-serif;
+ --normal-font-size: .938rem;
+ --small-font-size: .813rem;
+ --z-fixed: 100;
+}
+
+@media screen and (min-width: 768px) {
+ :root {
+   --normal-font-size: 1rem;
+   --small-font-size: .875rem;
+ }
+}
+
+*, ::before, ::after {
+ -webkit-box-sizing: border-box;
+         box-sizing: border-box;
+}
+
+.heading{
+ font-size: 1.1rem;
+ text-align: center;
+ text-transform: uppercase;
+ text-decoration: dotted;
+ color: #07a737;
+ text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+ text-decoration: underline;
+}
+.icon-section img{
+ height: 150px;
+}
+body {
+ margin: var(--header-height) 0 0 0;
+ font-family: var(--body-font);
+ font-size: var(--normal-font-size);
+ font-weight: 500;
+}
+
+ul {
+ margin: 0;
+ padding: 0;
+ list-style: none;
+}
+
+a {
+ text-decoration: none;
+}
+
+img {
+ max-width: 100%;
+ height: auto;
+}
+
+.bd-grid {
+ max-width: 1024px;
+ display: -ms-grid;
+ display: grid;
+ -ms-grid-columns: 100%;
+     grid-template-columns: 100%;
+ margin-left: 1.5rem;
+ margin-right: 1.5rem;
+}
+/* Common css ends here */
+
+
+/* header section starts here(all pages) */
+header {
+width: 100%;
+height: 7rem;
+position: fixed;
+top: 0;
+left: 0;
+padding: 0 1.5rem;
+background-color: #fff;
+z-index: var(--z-fixed);
+align-items: center;
+box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+ display: flex;
+ padding: 22px 0;
+ align-items: center;
+ max-width: 1200px;
+ margin: 0 auto;
+ justify-content: space-between;
+}
+
+.navbar .hamburger-btn {
+ display: none;
+ color: #000000;
+ cursor: pointer;
+ font-size: 1.5rem;
+}
+
+.navbar .logo {
+ gap: 10px;
+ display: flex;
+ align-items: center;
+ text-decoration: none;
+}
+
+.navbar .logo img {
+margin-bottom: .8rem;
+width: 56px;
+height: 56px;
+background-color: var(--first-color);
+border-radius: 50%;
+overflow: hidden;
+}
+
+.navbar .logo h2 {
+ color: #000000;
+ font-weight: 600;
+ font-size: 1.2rem;
+ display: block;
+}
+
+.navbar .links {
+ display: flex;
+ gap: 35px;
+ list-style: none;
+ align-items: center;
+}
+
+.navbar .close-btn {
+ position: absolute;
+ right: 20px;
+ top: 20px;
+ display: none;
+ color: #ffffff;
+ cursor: pointer;
+}
+
+.navbar .links a {
+ color: #000000;
+ font-size: 1rem;
+ font-weight: 500;
+ text-decoration: none;
+ transition: 0.1s ease;
+}
+.navbar .links a:hover{
+color: #80c48c;
+}
+
+.active {
+ background-color: var(--first-color);
+ color: var(--white-color);
+ padding: 8px 16px;
+ border-radius: .5rem;
+}
+
+.navbar .login-btn {
+ border: none;
+ outline: none;
+ background: #07a737;
+ color: #000000;
+ font-size: 1rem;
+ font-weight: 600;
+ padding: 10px 18px;
+ border-radius: 3px;
+ cursor: pointer;
+ transition: 0.15s ease;
+ font-family: 'Montserrat', sans-serif;
+}
+
+.navbar .login-btn:hover {
+ color: #ffffff;
+ font-family: 'Montserrat', sans-serif;
+}
+
+.form-popup {
+ position: fixed;
+ top: 60%;
+ left: 50%;
+ z-index: 10;
+ width: 100%;
+ opacity: 0;
+ pointer-events: none;
+ max-width: 420px;
+ background: #fff;
+ border: 2px solid #858484;
+ transform: translate(-50%, -70%);
+}
+
+.show-popup .form-popup {
+ opacity: 1;
+ pointer-events: auto;
+ transform: translate(-50%, -50%);
+ transition: transform 0.3s ease, opacity 0.1s;
+}
+
+.form-popup .close-btn {
+ position: absolute;
+ top: 12px;
+ right: 12px;
+ color: #878484;
+ cursor: pointer;
+}
+
+.bg-overlay {
+ position: fixed;
+ top: 0;
+ left: 0;
+ z-index: 10;
+ height: 100%;
+ width: 100%;
+ opacity: 0;
+ pointer-events: none;
+ backdrop-filter: blur(5px);
+ -webkit-backdrop-filter: blur(5px);
+ transition: 0.1s ease;
+}
+
+.show-popup .bg-overlay {
+ opacity: 1;
+ pointer-events: auto;
+}
+
+.form-popup .form-box {
+ display: flex;
+}
+
+
+.form-box .form-content {
+ width: 100%;
+ padding: 35px;
+}
+
+.form-box h2 {
+ text-align: center;
+ margin-bottom: 29px;
+}
+
+form .input-field {
+ position: relative;
+ height: 50px;
+ width: 100%;
+ margin-top: 20px;
+}
+
+.input-field input {
+ height: 100%;
+ width: 100%;
+ background: none;
+ outline: none;
+ font-size: 0.95rem;
+ padding: 0 15px;
+ border: 1px solid #000000;
+ border-radius: 3px;
+}
+
+.input-field input:focus {
+ border: 1px solid  #07a737;
+}
+
+.input-field label {
+ position: absolute;
+ top: 50%;
+ left: 15px;
+ transform: translateY(-50%);
+ color: #4a4646;
+ pointer-events: none;
+ transition: 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) {
+ padding: 16px 15px 0;
+}
+
+.input-field input:is(:focus, :valid)~label {
+ transform: translateY(-120%);
+ color:  #07a737;
+ font-size: 0.75rem;
+}
+
+.form-box a {
+ color:  #07a737;
+ text-decoration: none;
+}
+
+.form-box a:hover {
+ text-decoration: underline;
+}
+
+form :where(.forgot-pass-link, .policy-text) {
+ display: inline-flex;
+ margin-top: 13px;
+ font-size: 0.95rem;
+}
+
+form button {
+ width: 100%;
+ color: #fff;
+ border: none;
+ outline: none;
+ padding: 14px 0;
+ font-size: 1rem;
+ font-weight: 500;
+ border-radius: 3px;
+ cursor: pointer;
+ margin: 25px 0;
+ background:  #07a737;
+ transition: 0.2s ease;
+ font-family: "Quicksand", sans-serif;
+}
+
+form button:hover {
+ background:  #07a737;
+}
+
+.form-content .bottom-link {
+ text-align: center;
+}
+
+.form-popup .signup,
+.form-popup.show-signup .login {
+ display: none;
+}
+
+.form-popup.show-signup .signup {
+ display: flex;
+}
+
+
+#form {
+width: 420px;
+padding: 20px;
+background-color: whitesmoke;
+border-radius: 4px;
+font-size: 15px;
+}
+
+#form h1 {
+color: #0f2027;
+text-align: center;
+}
+
+#form button {
+padding: 8px;
+margin-top: 10px;
+width: 100%;
+color: white;
+background-color:  #07a737;
+border: none;
+border-radius: 4px;
+}
+
+.input-control {
+display: flex;
+flex-direction: column;
+}
+
+.input-control input {
+border: 1px solid #717171;
+border-radius: 4px;
+display: block;
+font-size: 15px;
+padding: 9px;
+width: 100%;
+}
+
+.input-control input:focus {
+outline: 0;
+}
+
+.input-control.success input {
+border-color: #09c372;
+}
+
+.input-control.error input {
+border-color: #f19eae;
+}
+
+.input-control .error {
+color: #ff3860;
+font-size: 12px;
+height: 13px;
+}
+
+.navbar .close-btn {
+position: absolute;
+right: 20px;
+top: 20px;
+display: none;
+color: #000;
+cursor: pointer;
+}
+
+
+@media (max-width: 950px) {
+.navbar {
+  padding: 42px 0;
+}
+
+ .navbar :is(.hamburger-btn, .close-btn) {
+     display: block;
+ }
+
+     .navbar .logo img {
+     display: none;
+ }
+
+ .navbar .logo h2 {
+     font-size: 1.1rem;
+ }
+
+ .navbar .links {
+     position: fixed;
+     top: 0;
+     z-index: 10;
+     left: -100%;
+     display: block;
+     height: 100vh;
+     width: 100%;
+     padding-top: 60px;
+     text-align: center;
+     background: #fff;
+     transition: 0.2s ease;
+ }
+
+ .navbar .links.show-menu {
+     left: 0;
+ }
+
+ .navbar .links a {
+     display: inline-flex;
+     margin: 20px 0;
+     font-size: 1.2rem;
+     color: #000;
+ }
+
+ .navbar .login-btn {
+     font-size: 0.9rem;
+     padding: 7px 10px;
+ }
+ .dropdown_menu {
+   left: 2rem;
+   right: 2rem;
+   padding: 10px 10px 10px 10px;
+   text-align: center;
+ }
+}
+
+@media (max-width: 760px) {
+  .form-popup {
+     width: 95%;
+ }
+
+ .form-box .form-details {
+     display: none;
+ }
+
+ .form-box .form-content {
+     padding: 30px 20px;
+ }
+}
+
+/* header section ends here(all pages) */
+
+
+/* footer section starts here (all pages) */
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Montserrat', sans-serif;
+}
+
+.footer {
+ background-color: #07a737;
+ color: #ffffff;
+ width: 100%;
+ bottom: 0;
+ left: 0;
+ font-family: 'Montserrat', sans-serif;
+}
+
+.footer .heading {
+ color: #ffffff;
+ max-width: 1010px;
+ width: 90%;
+ text-transform: uppercase;
+ margin: 0 auto;
+ margin-bottom: 3rem;
+}
+
+.footer .content {
+ display: flex;
+ justify-content: space-evenly;
+ margin: 1.5rem;
+}
+
+.footer .content p {
+ margin-bottom: 1.3rem;
+}
+
+.footer .content a {
+ text-decoration: none;
+ color: #fefefe;
+ line-height: .8;
+}
+
+.footer .content a:hover {
+ border-bottom: 1px solid #000000;
+}
+
+.footer .content h4 {
+ font-size: 19px;
+ text-decoration: underline;
+ color: #000;
+}
+
+.footer .content h5{
+ font-size: 1.1rem;
+ text-decoration: underline;
+ padding-bottom: .1px;
+}
+
+footer {
+ text-align: center;
+}
+
+footer hr {
+ margin: 2rem 0;
+}
+
+@media (max-width: 767px) {
+ .footer .content {
+   display: flex;
+   flex-direction: column;
+   font-size: 14px;
+ }
+
+ .footer {
+   position: unset;
+ }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+ .footer .content,
+ .footer {
+   font-size: 14px;
+ }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+ .footer {
+   position: unset;
+ }
+}
+/* footer section ends here (all pages) */
+
